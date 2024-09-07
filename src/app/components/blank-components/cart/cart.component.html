@@ -1,0 +1,61 @@
+
+@if (cartData) {
+    <div class=" lg:w-2/3 mx-auto bg-gray-100 border-gray-200 p-12 rounded-lg">
+        <div class="flex justify-between flex-wrap  items-center">
+            <div >
+                <h2 class="text-2xl font-bold pb-5">{{'cart.Shop Cart:'|translate}}</h2>
+                <p class="text-main pb-6">{{'cart.Total Cart Price'|translate}} : {{cartData.totalCartPrice | currency : 'GBP'}}  </p>
+            </div>
+            <div>
+                <button (click)="removeAllProducts()" class="btn-main pb-4">{{'cart.Remove All'|translate}}</button>
+            </div>
+    
+        </div>
+        @if(cartData.totalCartPrice == 0){
+            <div class="text-center text-3xl font-bold py-9 text-main">
+                <h3>{{'cart.The Cart is Empty'|translate}}</h3>
+                <h3>{{'cart.Go grab some of OUR PRODUCTS'|translate}}</h3>
+                <h3><i class="fa-regular fa-thumbs-up fa-2x"></i></h3>
+            </div>
+           
+        }
+        <div>
+    
+    
+            @for (item of cartData.products; track $index) {
+    
+    
+            <div class="flex flex-row flex-wrap gap-5">
+                <div class="basis-2/12 ">
+                    <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-full pr-3 pb-4 rounded-lg">
+                </div>
+                <div class="basis-10/12 flex justify-between items-center">
+                    <div>
+                        <p class="text-xl font-bold">{{item.product.title}}</p>
+                        <p class="text-main">Price : {{item.price | currency : 'GBP'}}</p>
+                        <button (click)="removeSpecificProduct(item.product.id)" class="text-red-300 pt-5"> <i class="fa-solid fa-trash"></i> Remove</button>
+                    </div>
+                    <div class="flex items-center">
+                        <span (click)="updateProductNumber(item.product.id , item.count +1)" class="text-main cursor-pointer"><i class="fa-regular fa-square-plus fa-xl"></i></span>
+                        <span class="text-xl px-3 font-bold">{{item.count}}</span>
+                        <span (click)="updateProductNumber(item.product.id , item.count -1)" class="text-main cursor-pointer"><i class="fa-regular fa-square-minus fa-xl"></i></span>
+                    </div>
+                </div>
+                
+            </div>
+            <hr class="my-2">
+    
+            }
+        </div>
+        @if(cartData.totalCartPrice !== 0){
+            <div class="text-end pt-3">
+                <button [routerLink]="['/checkout' , cartData._id]" class="btn-main">{{'cart.Check Out'|translate}}</button>
+            </div>
+        }
+   
+        
+    
+    
+    
+    </div>
+}

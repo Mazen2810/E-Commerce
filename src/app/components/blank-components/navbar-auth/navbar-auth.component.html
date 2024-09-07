@@ -1,0 +1,84 @@
+<nav class=" bg-gray-100 border-gray-200 dark:bg-gray-900 fixed  top-0 z-10 w-full">
+    <div class="my-container flex items-center justify-between p-4 ">
+        <div class="flex justify-between   mt-2 w-full ">
+
+            <a class="flex items-center space-x-3 rtl:space-x-reverse " routerLink="login">
+                <img src="assets/imgs/freshcart-logo.svg" class="h-8 dark:text-white" alt="FreshCart Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+            </a>
+          
+            <div class="sm:hidden">
+                <button type="button" class="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
+                  <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                  <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <span class="sr-only">Toggle navigation</span>
+                </button>
+              </div>
+
+              <div id="hs-navbar-example" class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block" aria-labelledby="hs-navbar-example-collapse">
+                <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
+
+                        <ul
+                            class=" font-medium  flex items-center justify-end flex-col py-2  mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-2 rtl:space-x-reverse sm:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700  sm:py-0">
+                            <li>
+                                <a routerLinkActive="activeLink" routerLink="/login"
+                                    class="inline-block py-2 px-3   rounded   md:border-0   dark:text-white   ">{{'navbar.Login'|translate}}</a>
+                            </li>
+                            <li>
+                                <a routerLinkActive="activeLink" routerLink="/register"
+                                    class="inline-block py-2 px-3   rounded   md:border-0   dark:text-white   ">{{'navbar.Register'|translate}}</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                
+            </div>
+
+
+
+        </div>
+        <div class="relative">
+            <button (click)="toggleDropdown()" id="dropdownRadioBgHoverButton"
+                data-dropdown-toggle="dropdownRadioBgHover"
+                class="  font-medium rounded-lg text-lg  py-2.5 text-center inline-flex items-center "
+                type="button">{{'navbar.Lang' | translate}} <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none"
+                    viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 4 4 4-4" />
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div [class.hidden]="!isDropdownOpen" id="dropdownRadioBgHover"
+                class="absolute top-full right-0 z-10 hidden w-24 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownRadioBgHoverButton">
+                    <li>
+                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <input [checked]="language == 'en'" id="default-radio-4" type="radio"
+                                (click)="changeLanguage('en')" (click)="closeDropdown()" value="" name="default-radio"
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700  dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-4"
+                                class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">EN</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <input [checked]="language == 'ar'" id="default-radio-5" type="radio"
+                                (click)="changeLanguage('ar')" (click)="closeDropdown()" value="" name="default-radio"
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700  dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-5"
+                                class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">AR</label>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</nav>

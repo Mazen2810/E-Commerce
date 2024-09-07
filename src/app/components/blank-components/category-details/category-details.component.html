@@ -1,0 +1,17 @@
+
+@if (specificCategory) {
+    <section class="my-10 ">
+
+        <div class="flex flex-row items-center justify-center">
+        <div class="basis-1/4">
+            <img [src]="specificCategory.image" [alt]="specificCategory.name" class="w-full">
+        
+        </div>
+        <div class="basis-3/4 pl-8">
+        <h2 class="text-xl font-bold">{{specificCategory.name}}</h2>
+        </div>
+        </div>
+        
+        </section>
+
+}

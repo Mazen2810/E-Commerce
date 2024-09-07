@@ -1,0 +1,80 @@
+@if(lastOrder){
+<section class="lg:w-2/3 mx-auto bg-gray-100 border-gray-200 p-8 rounded-lg">
+    <h1 class="text-main text-[36px] font-bold text-center py-3 ">{{'allorders.ORDER CONFIRMED'|translate}} <span><i class="fa-regular fa-thumbs-up fa-xl px-2"></i></span></h1>
+    <div class="flex justify-start items-center gap-20 p-5">
+        <div class="lg:basis-4/12 sm:basis-2/12">
+            <h2 class="text-2xl font-bold text-main">{{'allorders.User Info'|translate}} </h2>
+        </div>
+        
+        <div class=" lg:basis-8/12 sm:basis-10/12">
+            <p class="text-lg font-bold py-3">{{'allorders.Name:'|translate}} <span class="px-3">{{lastOrder.user.name}}</span></p>
+            <p class="text-lg font-bold py-3">{{'allorders.Email:'|translate}} <span class="px-3">{{lastOrder.user.email}}</span> </p>
+            <p class="text-lg font-bold py-3">{{'allorders.Phone:'|translate}} <span class="px-3">{{lastOrder.user.phone}}</span> </p>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="flex justify-start items-center gap-20 p-5">
+        <div class="basis-4/12">
+            <h2 class="text-2xl font-bold text-main">{{'allorders.Delivery Address'|translate}}</h2>
+        </div>
+       
+        <div class="basis-8/12">
+            <p class="text-lg font-bold py-3"> {{lastOrder.shippingAddress.details}}, {{lastOrder.shippingAddress.city}}</p>
+        </div>
+    </div>
+    <hr class="my-2">
+
+    <div class="flex justify-start items-center gap-20 p-5">
+        <div class="basis-4/12">
+            <h2 class="text-2xl font-bold text-main"> {{'allorders.Payment Method'|translate}}</h2>
+        </div>
+       
+        <div class="basis-8/12">
+            <p class="text-lg font-bold py-3" >{{'allorders.Via'|translate}}<span class="text-xl font-bold text-main"> {{lastOrder.paymentMethodType}}</span></p>
+        </div>
+    </div>
+    <hr class="my-2">
+
+    <div class="flex justify-between gap-20 p-5 flex-wrap border">
+        <div class="basis-4/12">
+            <h2 class="text-2xl font-bold text-main">{{'allorders.Review items and delivery'|translate}}</h2>
+        </div>
+        
+        @for (item of lastOrder.cartItems; track item._id) {
+        <div class="flex items-center justify-end basis-8/12">
+            <div class="">
+                <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-1/3 pr-3 pb-4 rounded-lg">
+            </div>
+            <div class=" ">
+                <div>
+                    <p class="text-xl font-bold">{{item.product.title}}</p>
+                    <p class="text-main">Price : {{item.price | currency : 'GBP'}}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <hr class="my-2">
+
+        }
+    </div>
+    <hr class="my-2">
+    <div class="flex justify-start items-center gap-20 p-5">
+        <div class="basis-4/12">
+            <h2 class="text-2xl font-bold text-main">{{'allorders.Order Total'|translate}}</h2>
+        </div>
+        
+        <div class="basis-8/12">
+            <p class="text-main">{{'allorders.Price'|translate}} : {{lastOrder.totalOrderPrice| currency : 'GBP'}}</p>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="text-end py-3">
+        <button routerLink="/home" class="btn-main">{{'allorders.Back to Home'|translate}}</button>
+    </div>
+
+</section>
+
+
+}

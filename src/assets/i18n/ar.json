@@ -1,0 +1,112 @@
+{
+   "navbar":{
+    "Home":"الرئيسية",
+    "Wish List":"المفضل",
+    "Products":"المنتجات",
+    "Categories":"الفئات",
+    "Brands":"العلامات التجارية",
+    "SignOut":"تسجيل الخروج",
+    "Lang":"لغة",
+     "Login": "تسجيل الدخول",
+    "Register": "إنشاء حساب"
+    
+   }
+   ,
+    "Home":{
+        "Popular Categories":"الفئات الشائعة",
+        "placeholder":"ابحث بالأسم....",
+        "Shop Today":"تسوق الآن",
+        "Add To Cart":"اضف إلى العربة"
+       
+    },
+
+    "footer":{
+        "Get the FreshCart App Now":"احصل على تطبيق فريش كارت الان!",
+        "We will send you a link, open it on your phone to download the app":"سنرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق",
+        "Share App Link":"مشاركة رابط التطبيق",
+        "Get deliveries with FreshCart":"احصل على عمليات التسليم مع فريش كارت",
+        "Payment Partners":"شركاء الدفع"
+
+    },
+    "cart":{
+        "Shop Cart:":"عربة التسوق :",
+        "Total Cart Price":"إجمالي سعر العربة",
+        "Remove All":"إزالة الكل",
+        "The Cart is Empty":"العربة فارغة",
+        "Go grab some of OUR PRODUCTS":"اذهب واحصل على بعض منتجاتنا",
+         "Check Out":"الذهاب إلى الدفع"
+
+    },
+    "checkout":{
+        "Shipping Address:":"عنوان الشحن :",
+        "Address Details":"تفاصيل العنوان",
+        "Phone Number":"رقم التليفون",
+        "City":"المدينة",
+        "Cash Payment":"الدفع النقدي",
+        "Credit Payment":"دفع الائتمان"
+
+    },
+    "allorders":{
+        "ORDER CONFIRMED :":"تم تأكيد الطلب ",
+        "Name:":"الأسم:",
+        "Delivery Address":"عنوان التسليم",
+        "Email:":"البريد الألكتروني: ",
+        "Phone:":"رقم الهاتف: ",
+        "User Info":"بيانات المستخدم",
+        "Payment Method":"طريقة الدفع",
+        "Via":" ",
+        "cash":"نقدي",
+        "card":"بطاقة",
+        "Review items and delivery":"مراجعة العناصر والتسليم",
+        "Price":"السعر",
+        "Order Total":"إجمالي الطلب",
+        "Back to Home":"العودة إلى الرئيسية"
+       
+
+    },
+    "login": {
+        "Login Now": "سجل الآن",
+        "email": "البريد الألكتروني",
+        "password": "كلمة المرور",
+        "login": "سجل",
+        "Forget Password": "نسيت كلمة المرور"
+    },
+    "register": {
+        "Register Now": "سجل الآن",
+        "Name": "الأسم",
+        "email": "البريد إلكتروني",
+        "password": "كلمة المرور",
+        "confirm Password": "تأكيد كلمة المرور",
+        "phone": "الهاتف",
+        "Register": "سجل",
+        "Name Is Required": "الاسم مطلوب",
+        "Name Should be more than or equal 3 characters": "يجب أن يكون الاسم أكثر من أو يساوي 3 أحرف",
+        "Name Should be less than or equal 20 characters": "يجب أن يكون الاسم أقل من أو يساوي 20 حرفًا",
+        "Email is invalid": "البريد الإلكتروني غير صالح",
+        "Password Is Required": "كلمة المرور مطلوبة",
+        "Password should contain at least 6 digits": "يجب أن تحتوي كلمة المرور على 6 أرقام على الأقل",
+        "Password Confirmation Isn't Correct": "تأكيد كلمة المرور غير صحيح",
+        "Phone Is Required": "الهاتف مطلوب",
+        "Phone Number is Not Valid": "رقم الهاتف غير صالح"
+
+    },
+    "forgetpass": {
+        "Forget Password": "نسيت كلمة المرور",
+        "email": "بريد إلكتروني",
+        "Send Code": "إرسال الرمز",
+        "Verify Code": "التحقق من الرمز",
+        "newPassword": "كلمة المرور الجديدة",
+        "Confirm Reset": "تأكيد إعادة التعيين"
+        
+    },
+    "wishlist": {
+        "Wish List": "المفضل",
+        "Add To Cart": "اضف إلى العربة",
+        "Remove": "إزالة",
+       "Price": "السعر",
+       "Wish List is Empty": "قائمة المفضلة فارغة",
+       "Go Look for some of OUR PRODUCTS": "ابحث عن احدى منتجاتنا"
+        
+        
+    }
+}

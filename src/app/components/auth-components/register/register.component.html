@@ -1,0 +1,193 @@
+<div class="my-container p-4 ">
+    <div class="w-10/12 mx-auto">
+        <h1 class="text-main text-3xl font-medium ">{{'register.Register Now'|translate}}:</h1>
+        <form class="w-8/12 mx-auto my-8 " [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+
+            <div class="mb-6 relative">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'register.Name'|translate}}</label>
+                <input [ngClass]="{
+                    '!border-red-500': registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
+                    registerForm.get('name')?.dirty),
+                    '!border-green-500': !registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
+                    registerForm.get('name')?.dirty)
+                }" formControlName="name" type="text" id="name" aria-describedby="name-explanation"
+                    class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+                @if (!registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
+                registerForm.get('name')?.dirty) ) {
+                <i class="absolute text-green-600 text-lg right-3 top-1/2 fa-solid fa-circle-check"></i>
+                }
+                @if (registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
+                registerForm.get('name')?.dirty) ) {
+                <i class="absolute text-red-600 text-lg right-3 top-1/2 fa-regular fa-circle-xmark"></i>
+                }
+
+
+
+            </div>
+            @if (registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
+            registerForm.get('name')?.dirty) ) {
+            <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                @if (registerForm.get('name')?.getError('required')) {
+                <p class="font-bold py-2">{{'register.Name Is Required'|translate}}</p>
+                }@else if (registerForm.get('name')?.getError('minlength')) {
+                <p class="font-bold py-2">{{'register.Name Should be more than or equal 3 characters'|translate}}</p>
+                }
+                @else if (registerForm.get('name')?.getError('maxlength')) {
+                <p class="font-bold py-2">{{'register.Name Should be less than or equal 20 characters'|translate}}</p>
+                }
+
+
+            </div>
+            }
+
+            <div class="mb-6 relative">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'register.email'|translate}}</label>
+                <input [ngClass]="{
+                    '!border-red-500': registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
+                    registerForm.get('email')?.dirty),
+                    '!border-green-500': !registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
+                    registerForm.get('email')?.dirty)
+                }" formControlName="email" type="email" id="email" aria-describedby="email-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+
+                @if (!registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
+                registerForm.get('email')?.dirty) ) {
+                <i class="absolute text-green-600 text-lg right-3 top-1/2 fa-solid fa-circle-check"></i>
+                }
+                @if (registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
+                registerForm.get('email')?.dirty) ) {
+                <i class="absolute text-red-600 text-lg right-3 top-1/2 fa-regular fa-circle-xmark"></i>
+                }
+
+            </div>
+            @if (registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
+            registerForm.get('email')?.dirty)) {
+            <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                @if (registerForm.get('email')?.getError('required')) {
+                <p class="font-bold py-2">{{'register.Email Is Required'|translate}}</p>
+                }@else if (registerForm.get('email')?.getError('email')) {
+                <p class="font-bold py-2">{{'register.Email is invalid'|translate}}</p>
+                }
+
+
+
+            </div>
+            }
+
+            <div class="mb-6 relative">
+                <label for="password"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'register.password'|translate}}</label>
+                <input [ngClass]="{
+                    '!border-red-500': registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
+                    registerForm.get('password')?.dirty),
+                    '!border-green-500': !registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
+                    registerForm.get('password')?.dirty)
+                }" formControlName="password" type="password" id="password" aria-describedby="password-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+                @if (!registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
+                registerForm.get('password')?.dirty) ) {
+                <i class="absolute text-green-600 text-lg right-3 top-1/2 fa-solid fa-circle-check"></i>
+                }
+                @if (registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
+                registerForm.get('password')?.dirty) ) {
+                <i class="absolute text-red-600 text-lg right-3 top-1/2 fa-regular fa-circle-xmark"></i>
+                }
+
+            </div>
+            @if (registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
+            registerForm.get('password')?.dirty)) {
+            <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                @if (registerForm.get('password')?.getError('required')) {
+                <p class="font-bold py-2">{{'register.Password Is Required'|translate}}</p>
+                }@else if (registerForm.get('password')?.getError('pattern')) {
+                <p class="font-bold py-2">{{'register.Password should contain at least 6 digits'|translate}}</p>
+                }
+
+
+
+            </div>
+            }
+            <div class="mb-6 relative">
+                <label for="repassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'register.confirm Password'|translate}}</label>
+                <input [ngClass]="{
+                    '!border-red-500': registerForm.get('rePassword')?.value != registerForm.get('password')?.value && (registerForm.get('rePassword')?.touched ||
+                    registerForm.get('rePassword')?.dirty) ,
+                    '!border-green-500':  registerForm.get('rePassword')?.value == registerForm.get('password')?.value && (registerForm.get('rePassword')?.touched ||
+                    registerForm.get('rePassword')?.dirty)
+                }" formControlName="rePassword" type="password" id="repassword"
+                    aria-describedby="repassword-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+                @if (registerForm.get('rePassword')?.value == registerForm.get('password')?.value &&
+                (registerForm.get('rePassword')?.touched ||
+                registerForm.get('rePassword')?.dirty) ) {
+                <i class="absolute text-green-600 text-lg right-3 top-1/2 fa-solid fa-circle-check"></i>
+                }
+                @if (registerForm.get('rePassword')?.value != registerForm.get('password')?.value &&
+                (registerForm.get('rePassword')?.touched ||
+                registerForm.get('rePassword')?.dirty) ) {
+                <i class="absolute text-red-600 text-lg right-3 top-1/2 fa-regular fa-circle-xmark"></i>
+                }
+
+            </div>
+            @if (registerForm.get('rePassword')?.value != registerForm.get('password')?.value && (registerForm.get('rePassword')?.touched ||
+            registerForm.get('rePassword')?.dirty)) {
+            <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                <p class="font-bold py-2"> {{"register.Password Confirmation Isn't Correct"|translate}} </p>
+            </div>
+            }
+            <div class="mb-6 relative">
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'register.phone'|translate}}</label>
+                <input [ngClass]="{
+                    '!border-red-500': registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
+                    registerForm.get('phone')?.dirty),
+                    '!border-green-500': !registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
+                    registerForm.get('phone')?.dirty)
+                }" formControlName="phone" type="tel" id="phone" aria-describedby="phone-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+                @if (!registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
+                registerForm.get('phone')?.dirty) ) {
+                <i class="absolute text-green-600 text-lg right-3 top-1/2 fa-solid fa-circle-check"></i>
+                }
+                @if (registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
+                registerForm.get('phone')?.dirty) ) {
+                <i class="absolute text-red-600 text-lg right-3 top-1/2 fa-regular fa-circle-xmark"></i>
+                }
+
+            </div>
+            @if (registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
+            registerForm.get('phone')?.dirty)) {
+            <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                @if (registerForm.get('phone')?.getError('required')) {
+                <p class="font-bold py-2">{{'register.Phone Is Required'|translate}}</p>
+                }@else if (registerForm.get('phone')?.getError('pattern')) {
+                <p class="font-bold py-2">{{'register.Phone Number is Not Valid'|translate}}</p>
+                }
+
+
+
+            </div>
+            }
+            <div class="text-end">
+                @if (errorMsg) {
+                <div class="py-2 my-3 bg-red-300 text-center rounded-lg">
+                    <p class="font-bold py-2">{{errorMsg}}</p>
+                </div>
+                }@else {}
+                <button [disabled]="registerForm.invalid || isLoading " type="submit" class="btn-main">{{'register.Register'|translate}}
+                    @if (isLoading) {
+                    <span><i class="fas fa-spin fa-spinner"></i></span>
+                    }
+
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>

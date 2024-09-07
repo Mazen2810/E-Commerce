@@ -1,0 +1,54 @@
+<div class="my-container p-4">
+    <div class="w-10/12 mx-auto">
+        <h1 class="text-main text-3xl font-medium ">{{'checkout.Shipping Address:'|translate}}</h1>
+        <form class="w-8/12 mx-auto my-8" [formGroup]="shippingAddress">
+
+            <div class="mb-6 relative">
+                <label for="details" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'checkout.Address Details'|translate}}</label>
+                <input formControlName="details" type="text" id="details" aria-describedby="details-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+            </div>
+
+
+
+
+
+
+
+            <div class="mb-6 relative">
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'checkout.Phone Number'|translate}}</label>
+                <input formControlName="phone" type="tel" id="phone" aria-describedby="phone-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+            </div>
+
+            <div class="mb-6 relative">
+                <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{'checkout.City'|translate}}</label>
+                <input formControlName="city" type="text" id="city" aria-describedby="city-explanation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+            </div>
+
+        <div class=" flex gap-3 justify-end">
+            <button  [disabled]="shippingAddress.invalid || isLoadingCash " 
+            (click)="cashCheckOut(cartId,shippingAddress.value)" type="submit" class="btn-main">{{'checkout.Cash Payment'|translate}}
+             @if (isLoadingCash) {
+                    <span><i class="fas fa-spin fa-spinner"></i></span>
+                    }
+
+            </button>
+
+            <button  [disabled]="shippingAddress.invalid || isLoadingCredit " 
+            (click)="creditCheckOut(cartId,shippingAddress.value)" type="submit" class="btn-main">{{'checkout.Credit Payment'|translate}}
+             @if (isLoadingCredit) {
+                    <span><i class="fas fa-spin fa-spinner"></i></span>
+                    }
+
+            </button>
+        </div>
+        </form>
+    </div>
+
+
+</div>

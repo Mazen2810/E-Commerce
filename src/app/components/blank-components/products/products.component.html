@@ -1,0 +1,51 @@
+@if(productList()){
+    <section class=" m-auto">
+<div class="flex justify-center ">
+    <input [(ngModel)]="searchedText" type="search" [placeholder]="'Home.placeholder' | translate " class="w-[50%]   p-2 border border-[var(--main-color)] rounded focus:shadow-sm focus:shadow-[var(--main-color)]">
+
+</div>
+        <h2 class="text-3xl font-bold p-8">{{'Home.Shop Today' | translate}}:</h2>
+        <div class="grid lg:grid-cols-5 gap-6 md:grid-cols-3">
+            @for (products of productList() | search : searchedText() ; track products.id) {
+            <div class="product p-3 relative">
+                <i (click)="addToWishlist(products.id)"  class="fa-regular fa-heart fa-2xl  absolute top-[5%] right-[5%] cursor-pointer" style="color: #e10505;"></i>
+               @for (id of idChanged(); track $index) {   
+               @if (products.id === id) {
+                <i (click)="removeFromWishlist(products.id)" class="fa-solid fa-heart fa-2xl  absolute top-[5%] right-[5%] cursor-pointer" style="color: #e10505;"></i>
+               }
+               }
+               
+               
+                <div [routerLink]="['/details' , products._id]" >
+                    <img [src]="products.imageCover" [alt]="products.title" class="w-full">
+                    <h5>{{products.category.name}}</h5>
+                    <h5>{{products.title.split(" ",3).join(" ")}}</h5>
+                    <div class="flex justify-between item-center pt-2">
+                        <p>{{products.price | currency : 'GBP'}}</p>
+                        <div>
+                            @for (num of [1,2,3,4,5]; track $index) {
+                            @if (num <= (products.ratingsAverage)) { <span> <i class="fas fa-star rating-color"></i> </span>
+                                }
+    
+                                }
+                                @if (products.ratingsAverage%1 !== 0) {
+                                <i class="fa-regular fa-star-half-stroke rating-color"></i>
+                                }
+    
+    
+                                <span>{{products.ratingsAverage}}</span>
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <div>
+                    <button (click)="addToCart(products.id)" class="btn-main w-full mt-2">{{'Home.Add To Cart' | translate}}</button>
+                </div>
+                
+            </div>
+            }
+        </div>
+    
+    </section>
+}

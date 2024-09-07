@@ -1,0 +1,50 @@
+
+@if (wishlist() !== []) {
+    <div class=" lg:w-2/3 mx-auto bg-gray-100 border-gray-200 p-12 rounded-lg sm:w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="text-2xl font-bold pb-5">{{'wishlist.Wish List'|translate}}</h2>
+               
+            </div>
+           
+        </div>
+        @if(productsNum() === 0){
+            <div class="text-center text-3xl font-bold py-9 text-main">
+                <h3>{{'wishlist.Wish List is Empty'|translate}}</h3>
+                <h3>{{'wishlist.Go Look for some of OUR PRODUCTS'|translate}}</h3>
+                <h3><i class="fa-regular fa-thumbs-up fa-2x"></i></h3>
+            </div>
+           
+        }
+
+        <div>
+            @for (item of wishlist(); track $index) {
+    
+    
+            <div class="flex flex-row gap-5">
+                <div class="lg:basis-2/12">
+                    <img [src]="item.imageCover" [alt]="item.title" class="lg:w-full pr-3 pb-4 rounded-lg ">
+                </div>
+                <div class="basis-10/12 flex flex-wrap justify-between items-center">
+                    <div class="flex-row justify-between items-center">
+                        <p class="text-xl font-bold">{{item.title}}</p>
+                        <p class="text-main">{{'wishlist.Price'|translate}} : {{item.price | currency : 'GBP'}}</p>
+                        <button (click)="removeFromWishlist(item.id)" class="text-red-300 pt-5"> <i class="fa-solid fa-trash"></i> {{'wishlist.Remove'|translate}}</button>
+                    </div>
+                    <div>
+                        <button (click)="addToCart(item.id)" class="btn-main"> {{'wishlist.Add To Cart'|translate}}</button>
+                    </div>
+                </div>
+                
+            </div>
+            <hr class="my-2">
+    
+            }
+        </div>
+       
+        
+    
+    
+    
+    </div>
+}

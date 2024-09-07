@@ -1,0 +1,104 @@
+{
+    "navbar": {
+        "Home": "Home",
+        "Wish List": "Wish List",
+        "Products": "Products",
+        "Categories": "Categories",
+        "Brands": "Brands",
+        "SignOut": "SignOut",
+        "Login": "Login",
+        "Register": "Register",
+        "Lang": "Lang"
+    },
+    "Home": {
+        "Popular Categories": "Popular Categories",
+        "placeholder": "Search By Name",
+        "Shop Today": "Shop Today",
+        "Add To Cart": "Add To Cart"
+    },
+    "footer": {
+        "Get the FreshCart App Now": "Get the FreshCart App Now",
+        "We will send you a link, open it on your phone to download the app": "We will send you a link, open it on your phone to download the app",
+        "Share App Link": "Share App Link",
+        "Get deliveries with FreshCart": "Get deliveries with FreshCart",
+        "Payment Partners": "Get the FreshCart App Now"
+    },
+    "cart": {
+        "Shop Cart:": "Shop Cart:",
+        "Total Cart Price": "Total Cart Price",
+        "Remove All": "Remove All",
+        "The Cart is Empty": "The Cart is Empty",
+        "Go grab some of OUR PRODUCTS": "Go grab some of OUR PRODUCTS",
+        "Check Out": "Check Out"
+    },
+    "checkout": {
+        "Shipping Address:": "Shipping Address:",
+        "Address Details": "Address Details",
+        "Phone Number": "Phone Number",
+        "City": "City",
+        "Cash Payment": "Cash Payment",
+        "Credit Payment": "Credit Payment"
+    },
+    "allorders": {
+        "ORDER CONFIRMED": "ORDER CONFIRMED",
+        "Delivery Address": "Delivery Address",
+        "Name:": "Name:",
+        "Email:": "Email: ",
+        "Phone:": "Phone: ",
+        "User Info": "User Info",
+        "Payment Method": "Payment Method",
+        "Via": "Via",
+        "cash": "cash",
+        "card": "card",
+        "Review items and delivery": "Review items and delivery",
+        "Order Total": "Order Total",
+        "Price": "Price",
+        "Back to Home": "Back to Home"
+    },
+    "login": {
+        "Login Now": "Login Now",
+        "email": "email",
+        "password": "password",
+        "login": "login",
+        "Forget Password": "Forget Password"
+    },
+    "register": {
+        "Register Now": "Register Now",
+        "Name": "Name",
+        "email": "email",
+        "password": "password",
+        "confirm Password": "confirm Password",
+        "phone": "phone",
+        "Register": "Register",
+        "Name Is Required": "Name Is Required",
+        "Name Should be more than or equal 3 characters": "Name Should be more than or equal 3 characters",
+        "Name Should be less than or equal 20 characters": "Name Should be less than or equal 20 characters",
+        "Email is invalid": "Email is invalid",
+        "Password Is Required": "Email Is Required",
+        "Password should contain at least 6 digits": "Password should contain at least 6 digits",
+        "Password Confirmation Isn't Correct": "Password Confirmation Isn't Correct",
+        "Phone Is Required": "Phone Is Required",
+        "Phone Number is Not Valid": "Phone Is Required"
+
+    },
+    "forgetpass": {
+        "Forget Password": "Forget Password",
+        "email": "email",
+        "Send Code": "Send Code",
+        "Verify Code": "Verify Code",
+        "newPassword": "newPassword",
+        "Confirm Reset": "Confirm Reset"
+        
+    },
+    "wishlist": {
+        "Wish List": "Wish List",
+        "Add To Cart": "Add To Cart",
+        "Remove": "Remove",
+       "Price": "Price",
+       "Wish List is Empty": "Wish List is Empty",
+       "Go Look for some of OUR PRODUCTS": "Go Look for some of OUR PRODUCTS"
+       
+        
+        
+    }
+}
