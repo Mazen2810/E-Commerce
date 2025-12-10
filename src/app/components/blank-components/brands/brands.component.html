@@ -4,8 +4,8 @@
     <div class="grid gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
 
         @for (brand of brandsList(); track brand._id) {
-            <div class="product !border-gray-500 p-3">
-                <img [src]="brand.image" alt="Brand Image" class="w-full h-[300px] object-contain">
+            <div class="product !border-gray-500 p-3 dark:dark:bg-gray-900">
+                <img [src]="brand.image" alt="Brand Image" class="w-full h-[400px] object-contain">
                 <h2 class="text-center text-2xl font-fold text-main">{{brand.name}}</h2>
             </div>
         }

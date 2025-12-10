@@ -9,6 +9,9 @@ import { WishlistService } from '../../../shared/services/wishlist.service';
 import { CartService } from '../../../shared/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { RouterLink } from '@angular/router';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 @Component({
   selector: 'app-products',
@@ -31,6 +34,8 @@ searchedText:WritableSignal<string>= signal('')
 
 
 ngOnInit(): void {
+  AOS.init();
+
   this._ProductsService.getAllProducts().subscribe({
     next:(res)=>{
       console.log(res)

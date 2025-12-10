@@ -11,7 +11,7 @@
                     '!border-green-500': !registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
                     registerForm.get('name')?.dirty)
                 }" formControlName="name" type="text" id="name" aria-describedby="name-explanation"
-                    class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  ">
 
                 @if (!registerForm.get('name')?.errors && (registerForm.get('name')?.touched ||
                 registerForm.get('name')?.dirty) ) {
@@ -49,7 +49,7 @@
                     '!border-green-500': !registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
                     registerForm.get('email')?.dirty)
                 }" formControlName="email" type="email" id="email" aria-describedby="email-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">
 
 
                 @if (!registerForm.get('email')?.errors && (registerForm.get('email')?.touched ||
@@ -85,7 +85,7 @@
                     '!border-green-500': !registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
                     registerForm.get('password')?.dirty)
                 }" formControlName="password" type="password" id="password" aria-describedby="password-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">
 
                 @if (!registerForm.get('password')?.errors && (registerForm.get('password')?.touched ||
                 registerForm.get('password')?.dirty) ) {
@@ -119,7 +119,7 @@
                     registerForm.get('rePassword')?.dirty)
                 }" formControlName="rePassword" type="password" id="repassword"
                     aria-describedby="repassword-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">
 
                 @if (registerForm.get('rePassword')?.value == registerForm.get('password')?.value &&
                 (registerForm.get('rePassword')?.touched ||
@@ -147,7 +147,7 @@
                     '!border-green-500': !registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
                     registerForm.get('phone')?.dirty)
                 }" formControlName="phone" type="tel" id="phone" aria-describedby="phone-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">
 
                 @if (!registerForm.get('phone')?.errors && (registerForm.get('phone')?.touched ||
                 registerForm.get('phone')?.dirty) ) {

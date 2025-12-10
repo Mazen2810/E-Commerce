@@ -1,7 +1,7 @@
 {
     "navbar": {
         "Home": "Home",
-        "Wish List": "Wish List",
+        "Wish List": "WishList",
         "Products": "Products",
         "Categories": "Categories",
         "Brands": "Brands",
@@ -21,7 +21,7 @@
         "We will send you a link, open it on your phone to download the app": "We will send you a link, open it on your phone to download the app",
         "Share App Link": "Share App Link",
         "Get deliveries with FreshCart": "Get deliveries with FreshCart",
-        "Payment Partners": "Get the FreshCart App Now"
+        "Payment Partners": "Payment Partners"
     },
     "cart": {
         "Shop Cart:": "Shop Cart:",
@@ -65,28 +65,29 @@
     "register": {
         "Register Now": "Register Now",
         "Name": "Name",
-        "email": "email",
-        "password": "password",
-        "confirm Password": "confirm Password",
-        "phone": "phone",
+        "email": "Email",
+        "password": "Password",
+        "confirm Password": "Confirm Password",
+        "phone": "Phone",
         "Register": "Register",
         "Name Is Required": "Name Is Required",
         "Name Should be more than or equal 3 characters": "Name Should be more than or equal 3 characters",
         "Name Should be less than or equal 20 characters": "Name Should be less than or equal 20 characters",
         "Email is invalid": "Email is invalid",
-        "Password Is Required": "Email Is Required",
+        "Email Is Required" : "Email Is Required",
+        "Password Is Required": "Password Is Required",
         "Password should contain at least 6 digits": "Password should contain at least 6 digits",
         "Password Confirmation Isn't Correct": "Password Confirmation Isn't Correct",
         "Phone Is Required": "Phone Is Required",
-        "Phone Number is Not Valid": "Phone Is Required"
+        "Phone Number is Not Valid": "Phone Number is Not Valid"
 
     },
     "forgetpass": {
         "Forget Password": "Forget Password",
-        "email": "email",
+        "email": "Email",
         "Send Code": "Send Code",
         "Verify Code": "Verify Code",
-        "newPassword": "newPassword",
+        "newPassword": "New Password",
         "Confirm Reset": "Confirm Reset"
         
     },

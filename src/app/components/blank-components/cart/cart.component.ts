@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { CartService } from '../../../shared/services/cart.service';
 import { Icart } from '../../../shared/interfaces/icart';
 import { CurrencyPipe } from '@angular/common';
@@ -19,15 +19,13 @@ import { TranslateModule } from '@ngx-translate/core';
 export class CartComponent implements OnInit {
 private readonly _CartService = inject(CartService)
 private readonly _ToastrService = inject(ToastrService)
-cartData : Icart | null = null
-ngOnInit(): void {
-  
+cartData : WritableSignal<Icart> = signal({} as Icart)
 
+ngOnInit(): void {
  this._CartService.getIntoCart().subscribe({
   next:(res)=>{
-   this.cartData = res.data
+   this.cartData.set(res.data);
    this._CartService.counterNum.set(res.numOfCartItems)
-   localStorage.setItem('cartNum' , this._CartService.counterNum().toString() )
     console.log(res)
   },
   
@@ -39,7 +37,7 @@ updateProductNumber(id: string, count: number){
       next:(res)=>{
     console.log(res);
    
-    this.cartData = res.data;
+    this.cartData.set(res.data);
     this._ToastrService.success('Cart has been updated successfully', 'Success')
       }
     })
@@ -72,7 +70,7 @@ removeSpecificProduct(id:string):void{
 
 
 removeAllProducts(){
-  if(this.cartData?.totalCartPrice !== 0){
+  if(this.cartData().totalCartPrice !== 0){
     Swal.fire({
       title: 'Warning!',
       text: 'All Products will be removed from your Cart, Do you want to continue',
@@ -81,7 +79,9 @@ removeAllProducts(){
       color : 'green',
       showDenyButton:true,
       confirmButtonText: 'Continue',
-      denyButtonText: 'Cancel'
+      confirmButtonColor : 'green' ,
+      denyButtonText: 'Cancel',
+      denyButtonColor : 'grey'
     } ).then((res)=>{
       if(res.isConfirmed){
         this._CartService.clearAllProducts().subscribe({

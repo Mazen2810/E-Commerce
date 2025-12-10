@@ -2,7 +2,7 @@
     <div class="grid md:grid-cols-3 gap-5  sm:grid-cols-1 ">
         @for (category of categoryList(); track category._id) {
 
-        <div class="product cursor-pointer">
+        <div class="product cursor-pointer dark:dark:bg-gray-900">
             <div>
                 <img [src]="category.image" [alt]="category.name" class="w-full h-[400px] bg-cover">
             </div>

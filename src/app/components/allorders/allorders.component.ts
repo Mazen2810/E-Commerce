@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { OrdersService } from '../../shared/services/orders.service';
 import { Allproducts } from '../../shared/interfaces/allproducts';
@@ -16,12 +16,12 @@ import { TranslateModule } from '@ngx-translate/core';
 export class AllordersComponent implements OnInit{
 private readonly _AuthService = inject(AuthService)
 private readonly _OrdersService = inject(OrdersService)
-lastOrder :Allproducts | null = null;
+lastOrder :WritableSignal<Allproducts> = signal({} as Allproducts)
 ngOnInit(): void {
   this._AuthService.saveUserData()
   this._OrdersService.getUserOrders(this._AuthService.userData.id).subscribe({
     next: (res) => {
-      this.lastOrder = res[res.length - 1]
+      this.lastOrder.set(res[res.length - 1])
       console.log(this.lastOrder)
       
     },

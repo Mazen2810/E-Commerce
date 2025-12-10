@@ -47,14 +47,15 @@ a:hover {
 }
 
 .product {
-  border-radius: 8px;
-  border: solid 1px var(--main-color);
-  transition: box-shadow 0.5s;
+  border:#ccc;
+  transition: all 0.5s ease-out;
   overflow: hidden;
 }
 
 .product:hover {
   box-shadow: 0 0 20px #11bd1168;
+  border: solid 0.5px var(--main-color);
+ 
 }
 
 .font-sm {

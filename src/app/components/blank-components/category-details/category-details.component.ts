@@ -8,25 +8,24 @@ import { ICategory } from '../../../shared/interfaces/icategory';
   standalone: true,
   imports: [],
   templateUrl: './category-details.component.html',
-  styleUrl: './category-details.component.scss'
+  styleUrl: './category-details.component.scss',
 })
 export class CategoryDetailsComponent implements OnInit {
-private readonly _ActivatedRoute = inject(ActivatedRoute)
-private readonly _CategoriesService = inject(CategoriesService)
+  private readonly _ActivatedRoute = inject(ActivatedRoute);
+  private readonly _CategoriesService = inject(CategoriesService);
 
-specificCategory:ICategory | null = null ;
+  specificCategory: ICategory | null = null;
 
-ngOnInit(): void {
-  this._ActivatedRoute.paramMap.subscribe({
-    next: (p)=>{
-let categoryID = p.get('id');
-      this._CategoriesService.getSpecificCategory(categoryID).subscribe({
-        next: (res) => {
-          this.specificCategory = res.data
-        }
-      })
-    }
-  })
-  
-}
+  ngOnInit(): void {
+    this._ActivatedRoute.paramMap.subscribe({
+      next: (p) => {
+        let categoryID = p.get('id');
+        this._CategoriesService.getSpecificCategory(categoryID).subscribe({
+          next: (res) => {
+            this.specificCategory = res.data;
+          },
+        });
+      },
+    });
+  }
 }

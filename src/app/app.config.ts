@@ -18,11 +18,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes , withViewTransitions() ,  withInMemoryScrolling({scrollPositionRestoration:'enabled'}))
-
-    , provideClientHydration(), 
-     provideHttpClient(withFetch() , withInterceptors([headersInterceptor,errorInterceptor,loadingInterceptor])),
-    provideAnimations(),provideToastr(),
+  providers: [
+    provideRouter(routes , withViewTransitions() ,  withInMemoryScrolling({scrollPositionRestoration:'enabled'})) , 
+    provideClientHydration(), 
+     provideHttpClient(withFetch() ,withInterceptors([headersInterceptor,errorInterceptor,loadingInterceptor])),
+    provideAnimations()
+    ,provideToastr(),
    importProvidersFrom(NgxSpinnerModule,
     TranslateModule.forRoot({
       loader: {

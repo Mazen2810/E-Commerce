@@ -1,14 +1,23 @@
 @if(productList()){
-    <section class=" m-auto">
+    <section class=" m-auto dark:text-white">
 <div class="flex justify-center ">
-    <input [(ngModel)]="searchedText" type="search" [placeholder]="'Home.placeholder' | translate " class="w-[50%]   p-2 border border-[var(--main-color)] rounded focus:shadow-sm focus:shadow-[var(--main-color)]">
+    <input [(ngModel)]="searchedText" type="search" [placeholder]="'Home.placeholder' | translate " class="lg:w-[50%] sm:w-full  p-2 border border-[var(--main-color)] rounded focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
 
 </div>
         <h2 class="text-3xl font-bold p-8">{{'Home.Shop Today' | translate}}:</h2>
         <div class="grid lg:grid-cols-5 gap-6 md:grid-cols-3">
             @for (products of productList() | search : searchedText() ; track products.id) {
-            <div class="product p-3 relative">
-                <i (click)="addToWishlist(products.id)"  class="fa-regular fa-heart fa-2xl  absolute top-[5%] right-[5%] cursor-pointer" style="color: #e10505;"></i>
+            <div class="product p-3 relative dark:dark:bg-gray-900" data-aos="zoom-in-up"
+            data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in
+                "
+                data-aos-mirror="true"
+                data-aos-once="true"
+                data-aos-anchor-placement="top-center">
+                <i (click)="addToWishlist(products.id)"  class="fa-solid fa-heart-crack fa-2xl  absolute top-[5%] right-[5%] cursor-pointer" style="color: #e10505;"></i>
+
                @for (id of idChanged(); track $index) {   
                @if (products.id === id) {
                 <i (click)="removeFromWishlist(products.id)" class="fa-solid fa-heart fa-2xl  absolute top-[5%] right-[5%] cursor-pointer" style="color: #e10505;"></i>
